@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Translation App</h1>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6 col-md-8">
+                <form method="POST" id="translationForm">
+                    <div class="form-group">
+
+                        <input type="text" class="form-control input-text" name="text" placeholder="Texte à traduire" required>
+
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="source_lang">
+                            <option value="auto" {% if source_lang =='auto' %}selected{% endif %}>Auto-detect</option>
+                            {% for code, name in languages.items() %}
+                                <option value="{{ code }}" {% if code == source_lang %}selected{% endif %}>{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="target_lang">
+                            {% for code, name in languages.items() %}
+                                <option value="{{ code }}" {% if code == target_lang %}selected{% endif %}>{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Traduire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6 col-md-8">
+                {% if translation %}
+                    <div class="alert alert-success">
+                        <h5>Traduction :</h5>
+                        <p class="translation-text">{{ translation }}</p>
+                    </div>
+                {% elif error_message %}
+                    <div class="alert alert-danger">
+                        <p>{{ error_message }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
