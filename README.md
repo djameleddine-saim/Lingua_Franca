@@ -46,13 +46,13 @@ The Language Translation Web Application is a Flask-based web application that a
 1. Clone the repository:
 
 ```bash
- git clone <repository-url> 
+ git clone https://github.com/djameleddine-saim/Lingua_Franca.git 
  ```
 
 2. Navigate to the project directory:
 
 ```bash
- cd language-translation-webapp 
+ cd Lingua_Franca 
  ```
 
 
