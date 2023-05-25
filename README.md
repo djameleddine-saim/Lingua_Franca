@@ -74,9 +74,10 @@ The web application will be accessible at `http://localhost:5000` in your web br
 
 ## Screenshots
 
-![traduction.png](..%2F..%2F..%2F..%2Fmon%20site%20-%204%2Fassets%2Fimg%2Ftraduction.png)
 
 
+
+![Capture d’écran (23)](https://github.com/djameleddine-saim/Lingua_Franca/assets/115147662/330ddcee-f029-4881-b92a-d558394828f1)
 
 
 
